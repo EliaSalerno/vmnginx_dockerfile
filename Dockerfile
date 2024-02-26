@@ -1,6 +1,5 @@
 from ubuntu
-RUN apt update
+RUN apt update && apt upgrade -y
 RUN apt install openssh
 RUN apt install nginx
-RUN sudo systemctl start nginx
-RUN sudo systemctl enable nginx
+CMD["systemctl status nginx"]
